@@ -13,7 +13,7 @@ app.get('/', (req, res) => {
 app.listen(process.env.PORT || 3000);
 
 function parseHeader(header) {
-  var lang = header['accept-language'].match(/(.+),/);
-  var sw = header['user-agent'].match(/\((.+)\)/);
+  var lang = header['accept-language'].match(/(.+?),/);
+  var sw = header['user-agent'].match(/\((.+?)\)/);
   return [lang[1], sw[1]];
 }
